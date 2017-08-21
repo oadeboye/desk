@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { configureStore } from './store/configureStore';
+import Root from './containers/Root';
+import { persistStore, autoRehydrate } from 'redux-persist';
 
-import AppContainer from './AppContainer';
+const store = configureStore();
 
+persistStore(store);
 
-/* This can check if your electron app can communicate with your backend */
-// fetch('http://localhost:3000')
-// .then(resp => resp.text())
-// .then(text => console.log(text))
-// .catch(err => {throw err})
-
-ReactDOM.render(<AppContainer />,
-   document.getElementById('root'));
+render(
+  <Root store={store}/>,
+  document.getElementById('root')
+);

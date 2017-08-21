@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch, hashHistory } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
+import Login from '../components/Login';
+import Register from '../components/Register';
 import axios from 'axios';
 
 class AppContainer extends React.Component {
