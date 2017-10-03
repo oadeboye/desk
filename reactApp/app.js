@@ -1,14 +1,11 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { configureStore } from './store/configureStore';
-import Root from './containers/Root';
-import { persistStore, autoRehydrate } from 'redux-persist';
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-const store = configureStore();
+/* This can check if your electron app can communicate with your backend */
+// fetch('http://localhost:3000')
+// .then(resp => resp.text())
+// .then(text => console.log(text))
+// .catch(err => {throw err})
 
-persistStore(store);
-
-render(
-  <Root store={store}/>,
-  document.getElementById('root')
-);
+ReactDOM.render(<p>React lives!</p>,
+   document.getElementById('root'));
